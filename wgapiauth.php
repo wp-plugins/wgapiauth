@@ -85,6 +85,7 @@ add_action('login_form', 'WGAPIAuth_form_panel');
 add_action('register_form','WGAPIAuth_form_panel');
 add_action('parse_request', 'WGAPIAuth_parse_request');
 add_action('login_form_login', 'WGAPIAuth_parse_request');
+add_action('register_post', 'WGAPIAuth_parse_request');
 function WGAPIAuthSettingsPage(){
     $WGAPIAuthPluginSettings = new WGAPIAuthPluginSettings();
     $WGAPIAuthPluginSettings->init();
@@ -99,10 +100,11 @@ function WGAPIAuth_div($redirectUrl=""){
     $WGAPIAuthPluginSettings = new WGAPIAuthPluginSettings();
     $WGAPIAuthPluginSettings->init();
     $WGAPIAuthOptions = $WGAPIAuthPluginSettings->getOptions();
-	if($redirectUrl){$redirectUrl='&redirectUrl='.$redirectUrl;}
+	if($redirectUrl){$redirectUrl='&redirectUrl='.$redirectUrl;};
     return '<div><a id="WGAPIAuthLink" href="'.$WGAPIAuthOptions["url"].'?action=generateAuthUrl'.$redirectUrl.'">'.$WGAPIAuthOptions["label"].'</a></div>';
 }
 function WGAPIAuth_comment_form(){
+	exit('sssss');
 	global $current_user;
     $WGAPIAuthPluginSettings = new WGAPIAuthPluginSettings();
     $WGAPIAuthPluginSettings->init();
