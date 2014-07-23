@@ -1,0 +1,36 @@
+<script>
+function showMessage(){}
+</script>
+<div class="wrap">
+    <h2>Настройки плагина WGAPIAuth</h2>
+	{ALERT}
+	<form name="WGAPIAuthSettingsForm" method="post">
+		<table class="form-table">
+			<tbody>
+					<th scope="row"><label for="application_id">Application ID</label></th>
+					<td><input name="application_id" id="application_id" type="text" value="{APPLICATION_ID}" class="regular-text code">
+					<p class="description">Укажите <a href="https://ru.wargaming.net/developers/applications/">Application ID</a> Вашего приложения.<br>Если Вы используете серверный тип приложения, не забудьте добавить адрес вашего сервера в список IP-адресов приложения.</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="url">Адрес сайта</label></th>
+					<td><input name="url" id="url" type="text" value="{URL}" class="regular-text code">
+					<p class="description">Укажите ссылку, по которой доступен Ваш сайт</p></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="label">Текст ссылки</label></th>
+					<td><input name="label" id="label" type="text" value="{LABEL}" class="regular-text code"></td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="type">Тип авторизации</label></th>
+					<td>
+						<select name="type" id="type">
+							<option value="popup" {POPUP_SELECTED}>В сплывающем окне</option>
+							<option value="redirect" {REDIRECT_SELECTED}>Перенаправление</option>
+						</select>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="submit"><input type="submit" name="update_WGAPIAuthPluginSettings" id="submit" class="button button-primary" value="Сохранить изменения" onclick="showMessage();"></p>
+	</form>
+</div>
