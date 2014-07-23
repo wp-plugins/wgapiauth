@@ -69,6 +69,11 @@ if(!class_exists("WGAPIAuth")){
 			$form = str_replace('{'.strtoupper($WGAPIAuthOptions['type']).'_SELECTED}','selected="selected"', $form);
 			$form = str_replace('{POPUP_SELECTED}','',$form);
 			$form = str_replace('{REDIRECT_SELECTED}','',$form);
+			if($WGAPIAuthOptions['cyrillic']){
+				$form = str_replace('{CYRILLIC}','checked',$form);
+			}else{
+				$form = str_replace('{CYRILLIC}','',$form);
+			}
 			echo $form;
 		}
 	}
