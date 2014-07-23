@@ -162,10 +162,15 @@ function WGAPIAuth_parse_request(){
 		if($_REQUEST["nofollow"]){
 			$redirect_uri.="?popup=1";
 		}
-		if($_REQUEST["redirectUrl"] && !$WGAPIAuthOptions["cyrillic"]){
+		if($_REQUEST["redirectUrl"]){
 			$redirect_uri.="?redirectUrl=".$_REQUEST["redirectUrl"]."&redirectHash=".substr(md5($_REQUEST["redirectUrl"].$WGAPIAuthOptions["application_id"]),0,10);
+			if($WGAPIAuthOptions["cyrillic"]){
+				$redirect_uri=file_get_contents("http://clck.ru/--?url=".urlencode($redirect_uri));
+			}else{
+				$redirect_uri=urlencode($redirect_uri);
+			}
 		}
-		$url = "https://api.worldoftanks.ru/wot/auth/login/?application_id=".$WGAPIAuthOptions["application_id"]."&redirect_uri=".urlencode($redirect_uri)."&display=popup&nofollow=1";
+		$url = "https://api.worldoftanks.ru/wot/auth/login/?application_id=".$WGAPIAuthOptions["application_id"]."&redirect_uri=".$redirect_uri."&display=popup&nofollow=1";
 		if(extension_loaded('openssl')){
 			$data=json_decode(file_get_contents($url),true);
 		}else{
