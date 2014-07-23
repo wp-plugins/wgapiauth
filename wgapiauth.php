@@ -195,6 +195,7 @@ function WGAPIAuth_parse_request(){
 				wp_redirect($data['data']['location']);
 				exit();
 			}else{
+				print_r($data);
 				exit("Произошла ошибка. Обновите попробуйте снова.");
 			}
 		}
