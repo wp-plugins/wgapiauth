@@ -1,6 +1,3 @@
-<script>
-function showMessage(){}
-</script>
 <div class="wrap">
     <h2>Настройки плагина WGAPIAuth</h2>
 	{ALERT}
@@ -24,7 +21,7 @@ function showMessage(){}
 					<th scope="row"><label for="type">Тип авторизации</label></th>
 					<td>
 						<select name="type" id="type">
-							<option value="popup" {POPUP_SELECTED}>В сплывающем окне</option>
+							<option value="popup" {POPUP_SELECTED}>Во всплывающем окне</option>
 							<option value="redirect" {REDIRECT_SELECTED}>Перенаправление</option>
 						</select>
 					</td>
@@ -42,6 +39,6 @@ function showMessage(){}
 				</tr>
 			</tbody>
 		</table>
-		<p class="submit"><input type="submit" name="update_WGAPIAuthPluginSettings" id="submit" class="button button-primary" value="Сохранить изменения" onclick="showMessage();"></p>
+		<p class="submit"><input type="submit" name="update_WGAPIAuthPluginSettings" id="submit" class="button button-primary" value="Сохранить изменения"></p>
 	</form>
 </div>
