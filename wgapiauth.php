@@ -18,7 +18,8 @@ if(!class_exists("WGAPIAuth")){
 				'type' => 'popup',
 				'url' => 'http://'.$_SERVER[HTTP_HOST],
 				'label' => 'Войти через единый аккаунт Wargaming.net ID',
-				'application_id' => 'demo'
+				'application_id' => 'demo',
+				'cyrillic' => '0'
 			);
 			$this->getOptions();
 		}
@@ -47,6 +48,11 @@ if(!class_exists("WGAPIAuth")){
 				}
 				if(isset($_POST['label'])){
 					$WGAPIAuthOptions['label'] = $_POST['label'];
+				}
+				if(isset($_POST['cyrillic']) && $_POST['cyrillic']){
+					$WGAPIAuthOptions['cyrillic'] = '1';
+				}else{
+					$WGAPIAuthOptions['cyrillic'] = '0';
 				}
 				update_option($this->_WGAPIAuthOptionsName,$WGAPIAuthOptions);
 				$save=1;
@@ -151,11 +157,11 @@ function WGAPIAuth_parse_request(){
 		if($_REQUEST["nofollow"]){
 			$redirect_uri.="?popup=1";
 		}
-		if($_REQUEST["redirectUrl"]){
+		if($_REQUEST["redirectUrl"] && !$WGAPIAuthOptions["cyrillic"]){
 			$redirect_uri.="?redirectUrl=".$_REQUEST["redirectUrl"]."&redirectHash=".substr(md5($_REQUEST["redirectUrl"].$WGAPIAuthOptions["application_id"]),0,10);
 		}
 		$url = "https://api.worldoftanks.ru/wot/auth/login/?application_id=".$WGAPIAuthOptions["application_id"]."&redirect_uri=".urlencode($redirect_uri)."&display=popup&nofollow=1";
-		if(0 and extension_loaded('openssl')){
+		if(extension_loaded('openssl')){
 			$data=json_decode(file_get_contents($url),true);
 		}else{
 			$curl = curl_init();

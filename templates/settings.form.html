@@ -29,6 +29,17 @@ function showMessage(){}
 						</select>
 					</td>
 				</tr>
+				<tr>
+					<th scope="row">В URL-адресах сайта присутствуют кириллические символы <code>http://example.com/привет_мир/</code></th>
+					<td>
+						<fieldset>
+							<label for="cyrillic">
+								<input name="cyrillic" type="checkbox" id="cyrillic" value="1">
+								Присутствуют
+							</label>
+						</fieldset>
+					</td>
+				</tr>
 			</tbody>
 		</table>
 		<p class="submit"><input type="submit" name="update_WGAPIAuthPluginSettings" id="submit" class="button button-primary" value="Сохранить изменения" onclick="showMessage();"></p>
