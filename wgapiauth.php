@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WGAPIAuth
-Plugin URI: http://samber.ru/
+Plugin URI: http://wordpress.org/plugins/wgapiauth/
 Description: Плагин который позволяет пользователям авторизироваться при помощи Wargaming.net Public API. Cсылка для авторизации будет добавлена в форму добавления комментариев а так же на страницы авторизации и регистрации
 Version: 0.1
 Author: STREJlA
