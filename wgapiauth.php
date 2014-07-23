@@ -2,7 +2,7 @@
 /*
 Plugin Name: WGAPIAuth
 Plugin URI: http://wordpress.org/plugins/wgapiauth/
-Description: Плагин который позволяет пользователям авторизироваться при помощи Wargaming Public API. Cсылка для авторизации будет добавлена в форму добавления комментариев а так же на страницы авторизации и регистрации.
+Description: Плагин который позволяет пользователям авторизироваться при помощи Wargaming Public API.  Cсылка для авторизации будет добавлена в форму добавления комментариев а так же на страницы авторизации и регистрации.
 Version: 0.1
 Author: STREJlA
 Author URI: http://forum.worldoftanks.ru/index.php?/user/strejla-423825/
