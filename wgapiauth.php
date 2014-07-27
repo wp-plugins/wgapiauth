@@ -80,7 +80,7 @@ if(!class_exists("WGAPIAuth")){
 }
 global $current_user;
 add_action('admin_menu', 'WGAPIAuthSettingsPage');
-add_action('comment_form', 'WGAPIAuth_comment_form');
+// add_action('comment_form', 'WGAPIAuth_comment_form');
 add_action('login_form', 'WGAPIAuth_form_panel');
 add_action('register_form','WGAPIAuth_form_panel');
 add_action('parse_request', 'WGAPIAuth_parse_request');
