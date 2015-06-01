@@ -1,0 +1,110 @@
+<div class="wrap">
+	<h2>Настройки плагина WGAPIAuth</h2>
+	{ALERT}
+	<form name="WGAPIAuthSettingsForm" method="POST">
+		<table class="form-table">
+			<tbody>
+				<tr>
+					<th scope="row">
+						<label for="region">Регион</label>
+					</th>
+					<td>
+						<select name="region" id="region">
+							<option value="ru"{REGION_RU}>[RU] Россия</option>
+							<option value="na"{REGION_NA}>[NA] America</option>
+							<option value="eu"{REGION_EU}>[EU] Europe</option>
+							<option value="asia"{REGION_ASIA}>[ASIA] Asia</option>
+							<option value="kr"{REGION_KR}>[KR] 대한민국</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="region">Первая аутентификация пользователя</label>
+					</th>
+					<td>
+						<label><input name="ignore_users_can_register" type="checkbox"{IGNORE_USERS_CAN_REGISTER}>
+							Всегда создавать аккаунт при первом входе</label>
+						<p class="description">Если этот параметр отмечен, настройки wordpress ("Любой может зарегистрироваться") игнорируются, новый аккаунт будет создан.</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="link_label">Текст ссылки в форме входа</label>
+					</th>
+					<td>
+						<input name="link_label" id="link_label" type="text" value="{LINK_LABEL}" class="regular-text code">
+						<p class="description">Эсли заполнить поле, ссылка для входа появится в форме авторизации. После аутентификации пользователь будет перенаправлен на главную страницу сайта.<br><br>Если необходимо, вы можете создать свой html елемент (ссылку, кнопку, картинку...) в нужной части сайта, отправляйте пользователя по адресу <code>{AUTH_URL}</code> что бы авторизировать его. После аутентификации пользователь будет перенаправлен на страницу сайта, на которой он кликнул по ссылке, если GET параметр <code>rt</code> не задан.
+						В качестве значения GET параметра можно указать ссылку, тогда пользователь, после аутентификации будет перенаправлен по ней, если ссылка ведет на ваш сайт. Если значение параметра пустое, пользователь попадет на главную страницу.</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="link_comment_label">Текст ссылки в блоке комментариев</label>
+					</th>
+					<td>
+						<input name="link_comment_label" id="link_comment_label" type="text" value="{LINK_COMMENT_LABEL}" class="regular-text code">
+						<p class="description">Эсли заполнить поле, ссылка для входа появится в форме добавления комментариев, если пользователь еще не аутентифицирован.</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label>Тип аутентификации</label>
+					</th>
+					<td>
+						<fieldset  onchange="document.getElementById('appid').style.display=(document.forms[0].auth_type.value=='api')?'table-row':'none'">
+							<legend class="screen-reader-text"><span>Тип аутентификации</span></legend>
+							<label title="OpenID">
+								<input type="radio" name="auth_type" value="openid" {AUTH_TYPE_OPENID_CHECKED}> <span>Средствами сервиса OpenID</span>
+							</label><br>
+							<label title="Public API">
+								<input type="radio" name="auth_type" value="api" {AUTH_TYPE_API_CHECKED}> <span>Средствами методов Wargaming Public API</span>
+							</label>
+						</fieldset>
+						<p class="description">Укажите, какой из типов аутентификации использовать. Подробнее о них написано <a href="https://ru.wargaming.net/support/Knowledgebase/Article/View/800/25/autentifikcija-pri-pomoshhi-metodov-public-api" target="_blank">здесь</a>.</p>
+					</td>
+				</tr>
+				<tr id="appid"{APPID_SETTINGS}>
+					<th scope="row">
+						<label for="application_id">Application ID</label>
+					</th>
+					<td>
+						<input name="application_id" id="application_id" type="text" value="{APPLICATION_ID}" class="regular-text code">
+						<p class="description">Укажите <a href="https://wargaming.net/developers/applications/" target="_blank">Application ID</a> Вашего приложения.</p>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">
+						<label for="region">Дополнительные данные в профиле игрока</label>
+					</th>
+					<td>
+						<fieldset>
+							<legend class="screen-reader-text"><span>Отображать ссылки на профиль в играх</span></legend>
+							<label><input name="show_game_profil" onchange="document.getElementById('show_game_profil_list').style.display=(document.getElementById('show_game_profil_list').style.display=='none')?'block':'none'" type="checkbox"{SHOW_GAME_PROFIL_CHECKED}>
+							Отображать ссылки на профиль в играх</label>
+						</fieldset>
+						<div id="show_game_profil_list"{SHOW_GAME_PROFIL_LIST_SETTINGS}>
+							<hr>
+							<fieldset>
+								<legend class="screen-reader-text"><span>На какие игровые профили выводить ссылки</span></legend>
+								<label><input name="show_game_profil_wot" type="checkbox"{SHOW_GAME_PROFIL_WOT_CHECKED}>
+								World of Tanks</label>
+								<br>
+								<label><input name="show_game_profil_wowp" type="checkbox"{SHOW_GAME_PROFIL_WOWP_CHECKED}>
+								World of Warplanes</label>
+								<br>
+								<label><input name="show_game_profil_wows" type="checkbox"{SHOW_GAME_PROFIL_WOWS_CHECKED}>
+								World of Warships</label>
+							</fieldset>
+						</div>
+						<p class="description">В профиле пользователя будут указанный ссылки на игровые профили, если отметить данный параметр.</p>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<p class="submit"><input type="submit" name="update_WGAPIAuthPluginSettings" id="submit" class="button button-primary" value="Сохранить изменения"></p>
+	</form>
+	<hr>
+	<h3>Спасибо за использование плагина!</h3>
+	<p>Если у Вас возникли проблемы с настройкой, есть идеи по улучшению плагина и по иным вопросам, для связи с автором Вы можете использовать: email - <a href="mailto:plagin@samber.tk" target="_blank">plagin@samber.tk</a>, соц. сеть <a href="https://vk.com/yatsenkoleg">Вконтакте</a>, игровой профиль world of tanks <a href="http://worldoftanks.ru/community/accounts/422766/">STREJlA</a></p>
+</div>
