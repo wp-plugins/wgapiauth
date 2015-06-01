@@ -1,7 +1,7 @@
 === WGAPIAuth ===
 Contributors: strejla
 Donate link: http://samber.ru/donate.html
-Tags: wg, wargaming, auth, api, wgpapi, authorization, ВГ, Варгейминг, авторизация
+Tags: wg, wargaming, auth, api, wgpapi, authorization, Р’Р“, Р’Р°СЂРіРµР№РјРёРЅРі, Р°РІС‚РѕСЂРёР·Р°С†РёСЏ
 Requires at least: 3.0.1
 Tested up to: 4.2.2
 Stable tag: trunk
@@ -12,15 +12,11 @@ Plugin that allows users to enter the site in one click, using a single account 
 
 == Description ==
 
-Плагин, который позволяет пользователям входить на сайт в один клик, используя единый аккаунт Wargaming.net ID. Для проверки данных используются методы Wargaming Public API или OpenID. Cсылка для аутентификации будет добавлена в форму добавления комментариев а так же на страницу авторизации. Возможна работа во всех игровых регионах ([RU] Россия, [NA] America, [EU] Europe, [ASIA] Asia, [KR] ????).
+РџР»Р°РіРёРЅ, РєРѕС‚РѕСЂС‹Р№ РїРѕР·РІРѕР»СЏРµС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏРј РІС…РѕРґРёС‚СЊ РЅР° СЃР°Р№С‚ РІ РѕРґРёРЅ РєР»РёРє, РёСЃРїРѕР»СЊР·СѓСЏ РµРґРёРЅС‹Р№ Р°РєРєР°СѓРЅС‚ Wargaming.net ID. Р”Р»СЏ РїСЂРѕРІРµСЂРєРё РґР°РЅРЅС‹С… РёСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ РјРµС‚РѕРґС‹ Wargaming Public API РёР»Рё OpenID. CСЃС‹Р»РєР° РґР»СЏ Р°СѓС‚РµРЅС‚РёС„РёРєР°С†РёРё Р±СѓРґРµС‚ РґРѕР±Р°РІР»РµРЅР° РІ С„РѕСЂРјСѓ РґРѕР±Р°РІР»РµРЅРёСЏ РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ Р° С‚Р°Рє Р¶Рµ РЅР° СЃС‚СЂР°РЅРёС†Сѓ Р°РІС‚РѕСЂРёР·Р°С†РёРё. Р’РѕР·РјРѕР¶РЅР° СЂР°Р±РѕС‚Р° РІРѕ РІСЃРµС… РёРіСЂРѕРІС‹С… СЂРµРіРёРѕРЅР°С… ([RU] Р РѕСЃСЃРёСЏ, [NA] America, [EU] Europe, [ASIA] Asia, [KR] ????).
 
 Plugin that allows users to enter the site in one click, using a single account Wargaming.net ID. For data verification methods are used Wargaming Public API or OpenID. The link for authentication will be added in the form of adding comments as well as on the authorization page. It is possible to work in all gameplay regions ([RU] Russia, [NA] America, [EU] Europe, [ASIA] Asia, [KR] ????).
 
 == Installation ==
-
-This section describes how to install the plugin and get it working.
-
-e.g.
 
 1. Upload WGAPIAuth to the `/wp-content/plugins/` directory
 1. Activate the plugin through the 'Plugins' menu in WordPress
@@ -28,9 +24,9 @@ e.g.
 
 == Screenshots ==
 
-1. /assets/s1.png
-1. /assets/s2.png
-1. /assets/s3.png
+1. The settings page
+1. The link to enter via wargaming on the login page
+1. The link to enter via wargaming on the publishing page
 
 == Changelog ==
 
