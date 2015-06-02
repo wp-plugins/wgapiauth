@@ -135,7 +135,11 @@ function WGAPIA_auth($account_id,$nickname,$redirectUrl=false){
 	}
 	$user=get_user_by('login', 'WG_'.$nickname);
 	if(!$user){
-		$new_user_id=wp_insert_user(array('user_login' => 'WG_'.$nickname));
+		$new_user_id=wp_insert_user(array(
+			'user_login' => 'WG_'.$nickname,
+			'display_name' => $nickname,
+			'nickname' => $nickname
+		));
 		update_user_meta($new_user_id,'region',WGAPIA_get_option('region'));
 		update_user_meta($new_user_id,'wg_account_id',$account_id);
 		
