@@ -1,4 +1,12 @@
 <?php
+/*
+Plugin Name: WGAPIAuth
+Plugin URI: https://blog.splatform.tk/
+Description: Плагин, который позволяет пользователям входить на сайт в один клик, используя единый аккаунт Wargaming.net ID. Для проверки данных используются методы Wargaming Public API или OpenID. Cсылка для аутентификации будет добавлена в форму добавления комментариев а так же на страницу авторизации. Возможна работа во всех игровых регионах ([RU] Россия, [NA] America, [EU] Europe, [ASIA] Asia, [KR] 대한민국).
+Version: 0.3.2
+Author: STREJlA
+Author URI: http://samber.ru/
+*/
 function WGAPIA_get_option($option_name=false){
 	$cache_option=get_option('WGAPIA_options');
 	if($cache_option){
